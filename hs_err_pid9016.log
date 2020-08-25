@@ -1,0 +1,440 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x72f824b0, pid=9016, tid=0x00001fa4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_261-b12) (build 1.8.0_261-b12)
+# Java VM: Java HotSpot(TM) Client VM (25.261-b12 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [CQP.dll+0x24b0]
+#
+# Core dump written. Default location: C:\Program Files (x86)\Common Files\Oracle\Java\javapath\hs_err_pid9016.mdmp
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x16421800):  JavaThread "MiraiNative" daemon [_thread_in_native, id=8100, stack(0x182c0000,0x18310000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000001, EBX=0x16421940, ECX=0x446408c0, EDX=0x73386a70
+ESP=0x1830f060, EBP=0x1830f074, ESI=0x00000000, EDI=0x16768a18
+EIP=0x72f824b0, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x1830f060)
+0x1830f060:   16768a18 184b06b0 163eb50c 00000000
+0x1830f070:   00000000 1830f088 72f82569 348947d2
+0x1830f080:   00000000 72fb2078 1830f0ac 1840c802
+0x1830f090:   00000000 348947d2 00000000 00000000
+0x1830f0a0:   1830f0b8 1830f0a0 163eb50c 1830f0f4
+0x1830f0b0:   18414e1f 184db1f0 348947d2 00000000
+0x1830f0c0:   1830f0f0 00000002 1830f0e4 00000001
+0x1830f0d0:   184b06a0 00000000 348947d2 00000000 
+
+Instructions: (pc=0x72f824b0)
+0x72f82490:   55 8b ec 83 ec 08 53 56 8b f2 89 4d f8 57 89 75
+0x72f824a0:   fc e8 2a f5 ff ff 8b d8 8d 46 01 0f 1f 44 00 00
+0x72f824b0:   8a 0e 46 84 c9 75 f9 2b f0 8b 03 56 53 8b 80 c0
+0x72f824c0:   02 00 00 ff d0 ff 75 fc 8b 0b 8b f8 56 6a 00 57 
+
+
+Register to memory mapping:
+
+EAX=0x00000001 is an unknown value
+EBX=0x16421940 is an unknown value
+ECX=0x446408c0 is an unknown value
+EDX=0x73386a70 is an unknown value
+ESP=0x1830f060 is pointing into the stack for thread: 0x16421800
+EBP=0x1830f074 is pointing into the stack for thread: 0x16421800
+ESI=0x00000000 is an unknown value
+EDI=0x16768a18 is an unknown value
+
+
+Stack: [0x182c0000,0x18310000],  sp=0x1830f060,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [CQP.dll+0x24b0]
+C  [CQP.dll+0x2569]
+C  [app.dll+0x1c802]
+C  [app.dll+0x24e1f]
+C  [app.dll+0xb657]
+C  [app.dll+0xd5d6]
+j  org.itxtech.mirainative.Bridge.pEvGroupMessage(I[BIIJJ[B[BI)I+0
+j  org.itxtech.mirainative.bridge.NativeBridge.eventGroupMessage(IIJJLjava/lang/String;Ljava/lang/String;I)V+136
+j  org.itxtech.mirainative.manager.EventManager$registerEvents$1$3$1.invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;+103
+J 1771 C1 kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Ljava/lang/Object;)V (142 bytes) @ 0x023dbf90 [0x023dbf00+0x90]
+J 2020 C1 kotlinx.coroutines.DispatchedTask.run()V (580 bytes) @ 0x02437644 [0x02437360+0x2e4]
+J 1947 C1 java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object; (14 bytes) @ 0x02421f40 [0x02421f10+0x30]
+J 1946 C1 java.util.concurrent.FutureTask.run()V (126 bytes) @ 0x02421a20 [0x02421990+0x90]
+J 1961 C1 java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V (59 bytes) @ 0x02425154 [0x02425040+0x114]
+J 2081% C1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (225 bytes) @ 0x02452f84 [0x02452d80+0x204]
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x165654]
+V  [jvm.dll+0x235f6b]
+V  [jvm.dll+0x165e07]
+V  [jvm.dll+0x165d46]
+V  [jvm.dll+0x10156b]
+V  [jvm.dll+0x189c34]
+V  [jvm.dll+0x1cef1b]
+C  [ucrtbase.dll+0x4737f]
+C  [KERNEL32.DLL+0x20179]
+C  [ntdll.dll+0x6662d]
+C  [ntdll.dll+0x665fd]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.itxtech.mirainative.Bridge.pEvGroupMessage(I[BIIJJ[B[BI)I+0
+j  org.itxtech.mirainative.bridge.NativeBridge.eventGroupMessage(IIJJLjava/lang/String;Ljava/lang/String;I)V+136
+j  org.itxtech.mirainative.manager.EventManager$registerEvents$1$3$1.invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;+103
+J 1771 C1 kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Ljava/lang/Object;)V (142 bytes) @ 0x023dbf90 [0x023dbf00+0x90]
+J 2020 C1 kotlinx.coroutines.DispatchedTask.run()V (580 bytes) @ 0x02437644 [0x02437360+0x2e4]
+J 1947 C1 java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object; (14 bytes) @ 0x02421f40 [0x02421f10+0x30]
+J 1946 C1 java.util.concurrent.FutureTask.run()V (126 bytes) @ 0x02421a20 [0x02421990+0x90]
+J 1961 C1 java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V (59 bytes) @ 0x02425154 [0x02425040+0x114]
+J 2081% C1 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V (225 bytes) @ 0x02452f84 [0x02452d80+0x204]
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x1688ec00 JavaThread "DefaultDispatcher-worker-9" daemon [_thread_blocked, id=3028, stack(0x17b60000,0x17bb0000)]
+  0x1688e800 JavaThread "DefaultDispatcher-worker-8" daemon [_thread_blocked, id=8468, stack(0x17940000,0x17990000)]
+  0x1665a000 JavaThread "DefaultDispatcher-worker-7" daemon [_thread_blocked, id=7828, stack(0x178b0000,0x17900000)]
+  0x16659c00 JavaThread "DefaultDispatcher-worker-6" daemon [_thread_blocked, id=4392, stack(0x176e0000,0x17730000)]
+  0x1665c800 JavaThread "DefaultDispatcher-worker-5" daemon [_thread_blocked, id=6616, stack(0x00320000,0x00370000)]
+  0x1665bc00 JavaThread "DefaultDispatcher-worker-4" daemon [_thread_blocked, id=9160, stack(0x003b0000,0x00400000)]
+  0x1665b000 JavaThread "DefaultDispatcher-worker-2" daemon [_thread_blocked, id=7980, stack(0x173d0000,0x17420000)]
+  0x1665cc00 JavaThread "DefaultDispatcher-worker-1" daemon [_thread_blocked, id=6384, stack(0x17780000,0x177d0000)]
+  0x1665b400 JavaThread "DefaultDispatcher-worker-3" daemon [_thread_in_native, id=6864, stack(0x18d10000,0x18d60000)]
+  0x1665c000 JavaThread "ktor-cio-dispatcher-worker-2" daemon [_thread_blocked, id=4492, stack(0x18760000,0x187b0000)]
+  0x1665a800 JavaThread "ktor-cio-dispatcher-worker-1" daemon [_thread_blocked, id=1908, stack(0x186d0000,0x18720000)]
+  0x15cf8800 JavaThread "JLine terminal non blocking reader thread" daemon [_thread_in_native, id=7668, stack(0x18520000,0x18570000)]
+  0x00800000 JavaThread "DestroyJavaVM" [_thread_blocked, id=9036, stack(0x006d0000,0x00720000)]
+  0x15cfd800 JavaThread "Console Input" [_thread_blocked, id=1376, stack(0x183a0000,0x183f0000)]
+=>0x16421800 JavaThread "MiraiNative" daemon [_thread_in_native, id=8100, stack(0x182c0000,0x18310000)]
+  0x16417c00 JavaThread "kotlinx.coroutines.DefaultExecutor" daemon [_thread_blocked, id=3288, stack(0x17c80000,0x17cd0000)]
+  0x1635fc00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=4892, stack(0x16e00000,0x16e50000)]
+  0x162f4000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=4748, stack(0x16c70000,0x16cc0000)]
+  0x162f2c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=2456, stack(0x16be0000,0x16c30000)]
+  0x15fec800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1372, stack(0x16b50000,0x16ba0000)]
+  0x15540400 JavaThread "Service Thread" daemon [_thread_blocked, id=6808, stack(0x15670000,0x156c0000)]
+  0x008a8c00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=6092, stack(0x154e0000,0x15530000)]
+  0x008a7800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8932, stack(0x15450000,0x154a0000)]
+  0x008c2800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7640, stack(0x153c0000,0x15410000)]
+  0x00886000 JavaThread "Finalizer" daemon [_thread_blocked, id=6908, stack(0x14cf0000,0x14d40000)]
+  0x00829800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7728, stack(0x14c60000,0x14cb0000)]
+
+Other Threads:
+  0x00825c00 VMThread [stack: 0x041a0000,0x041f0000] [id=7332]
+  0x008b0800 WatcherThread [stack: 0x15700000,0x15750000] [id=3204]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 14656K, used 3070K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,  23% used [0x04200000, 0x044f1858, 0x04ec0000)
+  from space 1600K,   3% used [0x05050000, 0x0505e150, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 27780K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b2710f0, 0x0b271200, 0x0b6f8000)
+ Metaspace       used 15887K, capacity 16404K, committed 16512K, reserved 16768K
+
+Card table byte_map: [0x04070000,0x04100000] byte_map_base: 0x0404f000
+
+Polling page: 0x00140000
+
+CodeCache: size=32768Kb used=4178Kb max_used=4178Kb free=28589Kb
+ bounds [0x02070000, 0x02488000, 0x04070000]
+ total_blobs=2465 nmethods=2112 adapters=283
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1990.767 Thread 0x008a8c00 2131             sun.util.calendar.Gregorian$Date::setNormalizedYear (7 bytes)
+Event: 1990.768 Thread 0x008a8c00 nmethod 2131 0x023d4648 code [0x023d4740, 0x023d47d0]
+Event: 2026.730 Thread 0x008a8c00 2132             sun.util.calendar.BaseCalendar::getGregorianYearFromFixedDate (201 bytes)
+Event: 2026.732 Thread 0x008a8c00 nmethod 2132 0x023d0f08 code [0x023d1030, 0x023d1680]
+Event: 2026.931 Thread 0x008a8c00 2133             kotlin.reflect.jvm.internal.impl.descriptors.runtime.structure.ReflectClassUtilKt::getFunctionClassArity (23 bytes)
+Event: 2026.933 Thread 0x008a8c00 nmethod 2133 0x024841c8 code [0x02484330, 0x02484594]
+Event: 2026.936 Thread 0x008a8c00 2134             kotlin.reflect.jvm.internal.impl.descriptors.runtime.structure.ReflectClassUtilKt::getWrapperByPrimitive (19 bytes)
+Event: 2026.938 Thread 0x008a8c00 nmethod 2134 0x02484948 code [0x02484ab0, 0x02484d14]
+Event: 2026.939 Thread 0x008a8c00 2135             kotlinx.coroutines.DispatchedContinuationKt::access$getUNDEFINED$p (4 bytes)
+Event: 2026.940 Thread 0x008a8c00 nmethod 2135 0x02485088 code [0x02485180, 0x024851f0]
+
+GC Heap History (10 events):
+Event: 21.641 GC heap before
+{Heap before GC invocations=55 (full 4):
+ def new generation   total 14656K, used 13588K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K, 100% used [0x04200000, 0x04ec0000, 0x04ec0000)
+  from space 1600K,  33% used [0x04ec0000, 0x04f45160, 0x05050000)
+  to   space 1600K,   0% used [0x05050000, 0x05050000, 0x051e0000)
+ tenured generation   total 32416K, used 25182K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  77% used [0x09750000, 0x0afe7890, 0x0afe7a00, 0x0b6f8000)
+ Metaspace       used 14779K, capacity 15316K, committed 15360K, reserved 15744K
+Event: 21.654 GC heap after
+Heap after GC invocations=56 (full 4):
+ def new generation   total 14656K, used 1600K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,   0% used [0x04200000, 0x04200000, 0x04ec0000)
+  from space 1600K, 100% used [0x05050000, 0x051e0000, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 26218K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  80% used [0x09750000, 0x0b0eab90, 0x0b0eac00, 0x0b6f8000)
+ Metaspace       used 14779K, capacity 15316K, committed 15360K, reserved 15744K
+}
+Event: 201.321 GC heap before
+{Heap before GC invocations=56 (full 4):
+ def new generation   total 14656K, used 14656K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K, 100% used [0x04200000, 0x04ec0000, 0x04ec0000)
+  from space 1600K, 100% used [0x05050000, 0x051e0000, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 26218K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  80% used [0x09750000, 0x0b0eab90, 0x0b0eac00, 0x0b6f8000)
+ Metaspace       used 15457K, capacity 15988K, committed 16128K, reserved 16768K
+Event: 201.333 GC heap after
+Heap after GC invocations=57 (full 4):
+ def new generation   total 14656K, used 1237K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,   0% used [0x04200000, 0x04200000, 0x04ec0000)
+  from space 1600K,  77% used [0x04ec0000, 0x04ff5670, 0x05050000)
+  to   space 1600K,   0% used [0x05050000, 0x05050000, 0x051e0000)
+ tenured generation   total 32416K, used 27530K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  84% used [0x09750000, 0x0b232800, 0x0b232800, 0x0b6f8000)
+ Metaspace       used 15457K, capacity 15988K, committed 16128K, reserved 16768K
+}
+Event: 515.237 GC heap before
+{Heap before GC invocations=57 (full 4):
+ def new generation   total 14656K, used 14293K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K, 100% used [0x04200000, 0x04ec0000, 0x04ec0000)
+  from space 1600K,  77% used [0x04ec0000, 0x04ff5670, 0x05050000)
+  to   space 1600K,   0% used [0x05050000, 0x05050000, 0x051e0000)
+ tenured generation   total 32416K, used 27530K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  84% used [0x09750000, 0x0b232800, 0x0b232800, 0x0b6f8000)
+ Metaspace       used 15885K, capacity 16404K, committed 16512K, reserved 16768K
+Event: 515.244 GC heap after
+Heap after GC invocations=58 (full 4):
+ def new generation   total 14656K, used 921K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,   0% used [0x04200000, 0x04200000, 0x04ec0000)
+  from space 1600K,  57% used [0x05050000, 0x05136708, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 27639K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b24dd50, 0x0b24de00, 0x0b6f8000)
+ Metaspace       used 15885K, capacity 16404K, committed 16512K, reserved 16768K
+}
+Event: 1263.361 GC heap before
+{Heap before GC invocations=58 (full 4):
+ def new generation   total 14656K, used 13977K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K, 100% used [0x04200000, 0x04ec0000, 0x04ec0000)
+  from space 1600K,  57% used [0x05050000, 0x05136708, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 27639K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b24dd50, 0x0b24de00, 0x0b6f8000)
+ Metaspace       used 15885K, capacity 16404K, committed 16512K, reserved 16768K
+Event: 1263.364 GC heap after
+Heap after GC invocations=59 (full 4):
+ def new generation   total 14656K, used 25K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,   0% used [0x04200000, 0x04200000, 0x04ec0000)
+  from space 1600K,   1% used [0x04ec0000, 0x04ec66f0, 0x05050000)
+  to   space 1600K,   0% used [0x05050000, 0x05050000, 0x051e0000)
+ tenured generation   total 32416K, used 27780K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b2710f0, 0x0b271200, 0x0b6f8000)
+ Metaspace       used 15885K, capacity 16404K, committed 16512K, reserved 16768K
+}
+Event: 1928.192 GC heap before
+{Heap before GC invocations=59 (full 4):
+ def new generation   total 14656K, used 13081K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K, 100% used [0x04200000, 0x04ec0000, 0x04ec0000)
+  from space 1600K,   1% used [0x04ec0000, 0x04ec66f0, 0x05050000)
+  to   space 1600K,   0% used [0x05050000, 0x05050000, 0x051e0000)
+ tenured generation   total 32416K, used 27780K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b2710f0, 0x0b271200, 0x0b6f8000)
+ Metaspace       used 15887K, capacity 16404K, committed 16512K, reserved 16768K
+Event: 1928.195 GC heap after
+Heap after GC invocations=60 (full 4):
+ def new generation   total 14656K, used 56K [0x04200000, 0x051e0000, 0x09750000)
+  eden space 13056K,   0% used [0x04200000, 0x04200000, 0x04ec0000)
+  from space 1600K,   3% used [0x05050000, 0x0505e150, 0x051e0000)
+  to   space 1600K,   0% used [0x04ec0000, 0x04ec0000, 0x05050000)
+ tenured generation   total 32416K, used 27780K [0x09750000, 0x0b6f8000, 0x14200000)
+   the space 32416K,  85% used [0x09750000, 0x0b2710f0, 0x0b271200, 0x0b6f8000)
+ Metaspace       used 15887K, capacity 16404K, committed 16512K, reserved 16768K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 88.304 Thread 0x1665b000 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x046dbb18) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 95.166 Thread 0x1665b000 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x0470f390) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 200.531 Thread 0x1665b400 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04d117b0) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 208.709 Thread 0x16659c00 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04800d78) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 917.390 Thread 0x1665cc00 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x048f7340) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 925.660 Thread 0x1665cc00 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04928c90) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 1442.815 Thread 0x1665c800 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04511400) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 1451.496 Thread 0x1665a000 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04547810) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 1753.881 Thread 0x1665b000 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04bbf8b0) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+Event: 1762.305 Thread 0x1665cc00 Exception <a 'java/lang/ClassCastException': java.util.AbstractMap$SimpleImmutableEntry cannot be cast to java.util.Map> (0x04bf1988) thrown at [C:\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u261\295\hotspot\src\share\vm\interpreter\interpreterRu
+
+Events (10 events):
+Event: 2026.932 Executing VM operation: RevokeBias
+Event: 2026.932 Executing VM operation: RevokeBias done
+Event: 2026.933 Executing VM operation: RevokeBias
+Event: 2026.934 Executing VM operation: RevokeBias done
+Event: 2026.934 Executing VM operation: RevokeBias
+Event: 2026.934 Executing VM operation: RevokeBias done
+Event: 2029.736 Executing VM operation: RevokeBias
+Event: 2029.737 Executing VM operation: RevokeBias done
+Event: 2029.737 Executing VM operation: RevokeBias
+Event: 2029.738 Executing VM operation: RevokeBias done
+
+
+Dynamic libraries:
+0x00240000 - 0x0027f000 	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe
+0x77b90000 - 0x77d2c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x77140000 - 0x77220000 	C:\Windows\System32\KERNEL32.DLL
+0x75e20000 - 0x7601a000 	C:\Windows\System32\KERNELBASE.dll
+0x737f0000 - 0x7388c000 	C:\Windows\SYSTEM32\apphelp.dll
+0x75450000 - 0x754ce000 	C:\Windows\System32\ADVAPI32.dll
+0x778e0000 - 0x779a0000 	C:\Windows\System32\msvcrt.dll
+0x75380000 - 0x753f9000 	C:\Windows\System32\sechost.dll
+0x75220000 - 0x752df000 	C:\Windows\System32\RPCRT4.dll
+0x75200000 - 0x75220000 	C:\Windows\System32\SspiCli.dll
+0x751f0000 - 0x751fa000 	C:\Windows\System32\CRYPTBASE.dll
+0x77b10000 - 0x77b72000 	C:\Windows\System32\bcryptPrimitives.dll
+0x77240000 - 0x773d9000 	C:\Windows\System32\USER32.dll
+0x767f0000 - 0x76807000 	C:\Windows\System32\win32u.dll
+0x77ae0000 - 0x77b03000 	C:\Windows\System32\GDI32.dll
+0x75a30000 - 0x75b97000 	C:\Windows\System32\gdi32full.dll
+0x77800000 - 0x77880000 	C:\Windows\System32\msvcp_win.dll
+0x775d0000 - 0x776f2000 	C:\Windows\System32\ucrtbase.dll
+0x74330000 - 0x7453f000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.379_none_4d6572bf1b98bda7\COMCTL32.dll
+0x75ba0000 - 0x75e18000 	C:\Windows\System32\combase.dll
+0x75a00000 - 0x75a25000 	C:\Windows\System32\IMM32.DLL
+0x749b0000 - 0x749c3000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\vcruntime140.dll
+0x74940000 - 0x749af000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\msvcp140.dll
+0x73380000 - 0x7375e000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\client\jvm.dll
+0x76ef0000 - 0x76ef6000 	C:\Windows\System32\PSAPI.DLL
+0x74e50000 - 0x74e58000 	C:\Windows\SYSTEM32\VERSION.dll
+0x74a30000 - 0x74a54000 	C:\Windows\SYSTEM32\WINMM.dll
+0x74930000 - 0x74938000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x77080000 - 0x770df000 	C:\Windows\System32\WS2_32.dll
+0x74a00000 - 0x74a23000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x76f00000 - 0x76f3b000 	C:\Windows\System32\cfgmgr32.dll
+0x761e0000 - 0x761ef000 	C:\Windows\System32\kernel.appcore.dll
+0x74920000 - 0x7492d000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\verify.dll
+0x748f0000 - 0x74914000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\java.dll
+0x748d0000 - 0x748e4000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\zip.dll
+0x76810000 - 0x76d5e000 	C:\Windows\System32\SHELL32.dll
+0x773e0000 - 0x77469000 	C:\Windows\System32\shcore.dll
+0x761f0000 - 0x767ec000 	C:\Windows\System32\windows.storage.dll
+0x77220000 - 0x7723c000 	C:\Windows\System32\profapi.dll
+0x770e0000 - 0x77134000 	C:\Windows\System32\powrprof.dll
+0x759b0000 - 0x759f4000 	C:\Windows\System32\shlwapi.dll
+0x75430000 - 0x75442000 	C:\Windows\System32\cryptsp.dll
+0x73d90000 - 0x73d99000 	C:\Users\Administrator\AppData\Local\Temp\1\jansi-1.18-807d36906ae08ebebd5fd1ea4470fc7f45ad31d4.dll
+0x73230000 - 0x7337b000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\awt.dll
+0x752e0000 - 0x7537b000 	C:\Windows\System32\OLEAUT32.dll
+0x73b80000 - 0x73bfb000 	C:\Windows\system32\uxtheme.dll
+0x779a0000 - 0x77add000 	C:\Windows\System32\MSCTF.dll
+0x73da0000 - 0x73dc6000 	C:\Windows\system32\dwmapi.dll
+0x76020000 - 0x761b9000 	C:\Windows\System32\CRYPT32.dll
+0x76d60000 - 0x76d6e000 	C:\Windows\System32\MSASN1.dll
+0x77700000 - 0x777fc000 	C:\Windows\System32\ole32.dll
+0x74540000 - 0x7456f000 	C:\Windows\system32\rsaenh.dll
+0x75410000 - 0x75429000 	C:\Windows\System32\bcrypt.dll
+0x74c80000 - 0x74ca3000 	C:\Windows\SYSTEM32\USERENV.dll
+0x73d70000 - 0x73d87000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\net.dll
+0x74760000 - 0x747b2000 	C:\Windows\system32\mswsock.dll
+0x74e10000 - 0x74e43000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x75400000 - 0x75407000 	C:\Windows\System32\NSI.dll
+0x748b0000 - 0x748c3000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x74890000 - 0x748a4000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x74800000 - 0x74890000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x737e0000 - 0x737ef000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\nio.dll
+0x73200000 - 0x73229000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\jpeg.dll
+0x73120000 - 0x731f9000 	C:\Windows\system32\opengl32.dll
+0x730e0000 - 0x7311f000 	C:\Windows\SYSTEM32\GLU32.dll
+0x730a0000 - 0x730dd000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\fontmanager.dll
+0x73000000 - 0x73099000 	C:\Windows\SYSTEM32\mscms.dll
+0x737d0000 - 0x737dc000 	C:\Windows\SYSTEM32\ColorAdapterClient.dll
+0x72fc0000 - 0x72ffe000 	C:\Windows\SYSTEM32\icm32.dll
+0x72f80000 - 0x72fbf000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\CQP.dll
+0x689e0000 - 0x689ec000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\gzip.dll
+0x17d60000 - 0x17fc9000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\htmlayout.dll
+0x77470000 - 0x7756a000 	C:\Windows\System32\comdlg32.dll
+0x73c00000 - 0x73c54000 	C:\Windows\SYSTEM32\OLEACC.dll
+0x72b00000 - 0x72cbc000 	C:\Windows\SYSTEM32\urlmon.dll
+0x72680000 - 0x72af1000 	C:\Windows\SYSTEM32\WININET.dll
+0x72450000 - 0x7267d000 	C:\Windows\SYSTEM32\iertutil.dll
+0x18120000 - 0x18275000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\libeay32.dll
+0x66000000 - 0x66154000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\libiconv.dll
+0x61e00000 - 0x61ecd000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\sqlite3.dll
+0x62e80000 - 0x62ea2000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\libraries\zlib1.dll
+0x183f0000 - 0x1851d000 	C:\Users\Administrator\Desktop\排除文件夹\mirai-console-starter-master\data\MiraiNative\plugins\app.dll
+0x72da0000 - 0x72e0b000 	C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x72220000 - 0x7239e000 	C:\Windows\SYSTEM32\PROPSYS.dll
+0x72f50000 - 0x72f73000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\sunec.dll
+0x737c0000 - 0x737cb000 	C:\Program Files (x86)\Java\jre1.8.0_261\bin\sunmscapi.dll
+0x72d60000 - 0x72d82000 	C:\Windows\SYSTEM32\ncrypt.dll
+0x72d30000 - 0x72d5c000 	C:\Windows\SYSTEM32\NTASN1.dll
+0x747e0000 - 0x747e8000 	C:\Windows\System32\rasadhlp.dll
+0x73760000 - 0x737b1000 	C:\Windows\System32\fwpuclnt.dll
+0x747c0000 - 0x747d1000 	C:\Windows\system32\napinsp.dll
+0x74750000 - 0x7475b000 	C:\Windows\System32\winrnr.dll
+0x74730000 - 0x74746000 	C:\Windows\system32\NLAapi.dll
+0x747f0000 - 0x74800000 	C:\Windows\system32\wshbth.dll
+0x75920000 - 0x759a1000 	C:\Windows\System32\clbcatq.dll
+0x72ec0000 - 0x72f45000 	C:\Windows\System32\vbscript.dll
+0x72e30000 - 0x72eb6000 	C:\Windows\SYSTEM32\sxs.dll
+0x72e10000 - 0x72e2c000 	C:\Windows\System32\msscript.ocx
+0x723a0000 - 0x7244b000 	C:\Windows\System32\jscript.dll
+0x72cc0000 - 0x72cf8000 	C:\ProgramData\Microsoft\Windows Defender\platform\4.18.2001.7-0\X86\MpOav.dll
+0x77880000 - 0x778de000 	C:\Windows\System32\coml2.dll
+0x71e20000 - 0x71edd000 	C:\Windows\SYSTEM32\Winhttp.dll
+0x71da0000 - 0x71e15000 	C:\Windows\SYSTEM32\webio.dll
+0x720d0000 - 0x720d8000 	C:\Windows\SYSTEM32\WINNSI.DLL
+0x71d20000 - 0x71d93000 	C:\Windows\System32\schannel.dll
+0x720c0000 - 0x720d0000 	C:\Windows\SYSTEM32\mskeyprotect.dll
+0x720a0000 - 0x720bf000 	C:\Windows\system32\ncryptsslp.dll
+0x72090000 - 0x72098000 	C:\Windows\System32\DPAPI.DLL
+0x71ee0000 - 0x7206f000 	C:\Windows\system32\DBGHELP.DLL
+0x721f0000 - 0x72214000 	C:\Windows\SYSTEM32\dbgcore.DLL
+
+VM Arguments:
+java_command: net.mamoe.mirai.console.pure.MiraiConsolePureLoader
+java_class_path (initial): ./lib/annotations-19.0.0.jar;./lib/atomicfu-0.14.1.jar;./lib/atomicfu-common-0.14.1.jar;./lib/atomicfu-jvm-0.14.4.jar;./lib/bcprov-jdk15on-1.64.jar;./lib/jansi-1.18.jar;./lib/jline-3.15.0.jar;./lib/kotlin-gradle-plugin-api-1.4.0.jar;./lib/kotlin-jvm-blocking-bridge-jvm-1.0.3.jar;./lib/kotlin-reflect-1.4.0.jar;./lib/kotlin-serialization-1.4.0.jar;./lib/kotlin-stdlib-1.4.0.jar;./lib/kotlin-stdlib-common-1.4.0.jar;./lib/kotlin-stdlib-jdk7-1.4.0.jar;./lib/kotlin-stdlib-jdk8-1.4.0.jar;./lib/kotlinx-coroutines-core-1.3.9.jar;./lib/kotlinx-coroutines-core-common-1.3.2-1.3.60.jar;./lib/kotlinx-coroutines-core-jvm-1.3.9.jar;./lib/kotlinx-coroutines-io-0.1.16.jar;./lib/kotlinx-coroutines-io-jvm-0.1.16.jar;./lib/kotlinx-coroutines-jdk8-1.3.9.jar;./lib/kotlinx-io-0.1.16.jar;./lib/kotlinx-io-jvm-0.1.16.jar;./lib/kotlinx-serialization-core-jvm-1.0.0-RC.jar;./lib/kotlinx-serialization-protobuf-jvm-1.0.0-RC.jar;./lib/ktor-client-cio-jvm-1.4.0.jar;./lib/ktor-client-core-jvm-1.4.0.jar;./lib/ktor-http-cio-jvm-1.4.0.jar;./lib/ktor-http-jvm-1.4.0.jar;./lib/ktor-io-jvm-1.4.0.jar;./lib/ktor-network-jvm-1.4.0.jar;./lib/ktor-network-tls-jvm-1.4.0.jar;./lib/ktor-utils-jvm-1.4.0.jar;./lib/mirai-console-1.0-M2-1.jar;./lib/mirai-console-pure-1.0-M2-1.jar;./lib/mirai-core-1.2.2.jar;./lib/mirai-core-jvm-1.2.1.jar;./lib/mirai-core-qqandroid-jvm-1.2.1.jar;./lib/semver4j-3.1.0.jar;./lib/slf4j-api-1.7.30.jar;./lib/yamlkt-jvm-0.4.0.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Python38\Scripts\;C:\Program Files\Python38\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 55 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.379)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 55 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, clmul, erms, 3dnowpref, tsc, tscinvbit
+
+Memory: 4k page, physical 4076032k(570168k free), swap 4796928k(1234812k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.261-b12) for windows-x86 JRE (1.8.0_261-b12), built on Jun 18 2020 06:57:43 by "" with unknown MS VC++:1916
+
+time: Tue Aug 25 16:12:07 2020
+timezone: ?D1ú±ê×?ê±??
+elapsed time: 2053 seconds (0d 0h 34m 13s)
+
